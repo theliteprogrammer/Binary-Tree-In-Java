@@ -91,25 +91,37 @@ public class BinaryTree<T> {
             return;
         }
         System.out.print(root.value + "->");
-        preOrderTraversal(root.leftChild);
-        preOrderTraversal(root.rightChild);
+        if(root.hasLeftChild(root)) {
+            preOrderTraversal(root.leftChild);
+        }
+        if(root.hasRightChild(root)) {
+            preOrderTraversal(root.rightChild);
+        }
     }
 
     public void inOrderTraversal(Node<T> root) {
         if(root == null) {
             return;
         }
-        inOrderTraversal(root.leftChild);
+        if(root.hasLeftChild(root)) {
+            inOrderTraversal(root.leftChild);
+        }
         System.out.print(root.getValue() + "->");
-        inOrderTraversal(root.rightChild);
+        if(root.hasRightChild(root)) {
+            inOrderTraversal(root.rightChild);
+        }
     }
 
     public void postOrderTraversal(Node<T> root) {
         if(root == null) {
             return;
         }
-        postOrderTraversal(root.leftChild);
-        postOrderTraversal(root.rightChild);
+        if(root.hasLeftChild(root)) {
+            postOrderTraversal(root.leftChild);
+        }
+        if(root.hasRightChild(root)) {
+            postOrderTraversal(root.rightChild);
+        }
         System.out.print(root.getValue() + "->");
     }
 }
