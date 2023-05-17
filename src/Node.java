@@ -19,18 +19,18 @@ public class Node<T> {
 
     public boolean hasLeftChild(Node<T> root) {
         if(value instanceof Integer) {
-            return (int) this.value < (int) root.value;
+            return root.leftChild == null;
         } else if(value instanceof Integer) {
-            return (double) this.value < (double) root.value;
+            return root.leftChild == null;
         }
         return false;
     }
 
     public boolean hasRightChild(Node<T> root) {
         if(value instanceof Integer) {
-            return (int) this.value > (int) root.value;
+            return root.rightChild == null;
         } else if(value instanceof Integer) {
-            return (double) this.value > (double) root.value;
+            return root.rightChild == null;
         }
         return false;
     }
